@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: .
+    command: sh compose-run.sh 
+    ports:
+      - "5174:5173"
+    volumes:
+      - .:/app
