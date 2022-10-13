@@ -3,13 +3,8 @@ services:
   web:
     build:
       context: .
-    command: sh compose-run.sh
+    command: sh compose-run.sh 
+    ports:
+      - "5174:5173"
     volumes:
       - .:/app
-
-  nginx:
-    build: ./conf/nginx
-    ports:
-      - 80:80
-    depends_on:
-      - web
